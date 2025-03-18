@@ -4,8 +4,12 @@ from services.query_reformulation import QueryReformulationService
 from services.intent_classifier import IntentClassificationService
 from services.hallucination_checker import HallucinationCheckService
 from services.response_generator import ResponseGeneratorService
+from dotenv import load_dotenv
 
-api_key_value = os.environ.get('API_KEY')
+load_dotenv()
+
+
+api_key_value = os.getenv('API_KEY')
 
 async def test_query_reformulation():
     # Replace these with your actual vendor credentials.

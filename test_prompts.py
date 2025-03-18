@@ -1,15 +1,17 @@
+import os
 import asyncio
 from services.query_reformulation import QueryReformulationService
 from services.intent_classifier import IntentClassificationService
 from services.hallucination_checker import HallucinationCheckService
 from services.response_generator import ResponseGeneratorService
 
+api_key_value = os.environ.get('API_KEY')
 
 async def test_query_reformulation():
     # Replace these with your actual vendor credentials.
     vendor = "openai"
     model_name = "gpt-4o"  # Example model, adjust as needed.
-    api_key = ""      # Replace with your actual API key.
+    api_key = api_key_value      # Replace with your actual API key.
     
     # Create an instance of the QueryReformulationService.
     service = QueryReformulationService(vendor, model_name, api_key)
@@ -27,7 +29,7 @@ async def test_intent_classification():
     # Replace these with your actual credentials.
     vendor = "openai"
     model_name = "gpt-4o"  # Example model, adjust as needed.
-    api_key = ""      # Replace with your actual API key.
+    api_key = api_key_value      # Replace with your actual API key.
     
     # Instantiate the IntentClassificationService.
     service = IntentClassificationService(vendor, model_name, api_key)
@@ -43,7 +45,7 @@ async def test_intent_classification():
 async def test_hallucination_check():
     vendor = "openai"
     model_name = "gpt-4o"  # Example model, adjust as needed.
-    api_key = ""      # Replace with your actual API key.
+    api_key = api_key_value     # Replace with your actual API key.
     
     service = HallucinationCheckService(vendor, model_name, api_key)
     
@@ -67,7 +69,7 @@ async def test_response_generation():
     # Replace these with your actual credentials.
     vendor = "openai"
     model_name = "gpt-4o"  # Example model, adjust as needed.
-    api_key = ""      # Replace with your actual API key.
+    api_key = api_key_value      # Replace with your actual API key.
     
     # Create a sample list of documents (simulate output from vector search).
     documents = [

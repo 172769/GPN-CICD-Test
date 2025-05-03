@@ -9,6 +9,8 @@ on:
 jobs:
   dockerbuild:
     runs-on: ubuntu-latest
+    outputs:
+      commit_message: ${{ steps.get_commit.outputs.msg }}
     steps:
     - uses: actions/checkout@v4
     - name: Build The Docker Image

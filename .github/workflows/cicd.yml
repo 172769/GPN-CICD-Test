@@ -47,10 +47,7 @@ jobs:
       run: |
         echo aws configure list
         aws eks update-kubeconfig --name gpn-chatbot-cluster
-  
     - name: Deploy to EKS
       run: |
-#        kubectl create namespace gpn-chatbot
-        kubectl apply -n gpn-chatbot -f deployment.yaml
         kubectl apply -f deployment.yaml
         kubectl apply -f service.yaml
